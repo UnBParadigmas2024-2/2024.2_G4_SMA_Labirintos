@@ -1,31 +1,22 @@
-# RepositorioTemplate
-Esse repositório é para ser utilizado pelos grupos como um template inicial, da home page do Projeto.
-As seções do Template NÃO DEVEM SER OMITIDAS, sendo TODAS RELEVANTES.
-
-**!! *Atenção: Renomeie o seu repositório para (Ano.Semestre)_(Grupo)_(Paradigma)_(NomeDoProjeto)*. !!** 
-
-Paradigmas:
- - Funcional
- - Logico
- - SMA
-
-**!! *Não coloque os nomes dos alunos no título do repositório*. !!**
-
-**!! *Exemplo de título correto: 2023.2_G1_Logico_ProjetoRoteirosAereos*. !!**
- 
- (Apague esses comentários)
-
 # NomeDoProjeto
 
 **Disciplina**: FGA0210 - PARADIGMAS DE PROGRAMAÇÃO - T01 <br>
-**Nro do Grupo (de acordo com a Planilha de Divisão dos Grupos)**: XX<br>
-**Paradigma**: XXXXXXXXXX<br>
+**Nro do Grupo**: 04<br>
+**Paradigma**: SMA<br>
 
 ## Alunos
+
 |Matrícula | Aluno |
-| -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| :--: | :--: |
+| 20/2045624 | [Abdul hannan](https://github.com/hannanhunny01)	|
+| 21/1029147 | [Arthur de Melo Viana](https://github.com/arthurmlv)	|
+| 19/0026758 | [Deivid Carvalho](https://github.com/deivid-a1) |	
+| 21/1062867 | [Felipe de Jesus Rodrigues](https://github.com/felipeJRdev) |
+| 17/0108341 | [Levi de Oliveira Queiroz](https://github.com/LeviQ27) |	
+| 17/0111059 | [Matheus Fonseca Sousa](https://github.com/gatotabaco) |	
+| 19/0093331 | [Matheus Costa Gomes](https://github.com/mc-gomes) |	
+| 21/1029559 | [Rafael Brito Bosi Rodrigues](https://github.com/StrangeUnit28) |	
+| 16/0149410 | [Yudi Yamane de Azevedo](https://github.com/yudi-azvd)	| 
 
 ## Sobre 
 Descreva o seu projeto em linhas gerais. 
@@ -58,10 +49,18 @@ OBS: TODOS DEVEM PARTICIPAR, CONFERINDO PONTOS DE VISTA.
 TEMPO: +/- 15min
 
 ## Participações
-Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
-|Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) | Comprobatórios (ex. links para commits)
-| -- | -- | -- | -- |
-| Fulano  |  Programação dos Fatos da Base de Conhecimento Lógica | Boa | Commit tal (com link)
+
+|       Nome do Membro        | Contribuição                                                                 | Significância da Contribuição para o Projeto | Comprobatórios |
+| :-------------------------: | ---------------------------------------------------------------------------- | :----------------------------------------------------------------------------: | :-------------------------------------: |
+| [Abdul hannan](https://github.com/hannanhunny01)	|  |  |  |
+| [Arthur de Melo Viana](https://github.com/arthurmlv)	|  |  |  |
+| [Deivid Carvalho](https://github.com/deivid-a1) |  |  |  |	
+| [Felipe de Jesus Rodrigues](https://github.com/felipeJRdev) |  |  |  |
+| [Levi de Oliveira Queiroz](https://github.com/LeviQ27) |  |  |  |	
+| [Matheus Fonseca Sousa](https://github.com/gatotabaco) |  |  |  |	
+| [Matheus Costa Gomes](https://github.com/mc-gomes) |  |  |  |	
+| [Rafael Brito Bosi Rodrigues](https://github.com/StrangeUnit28) |  |  |  |	
+| [Yudi Yamane de Azevedo](https://github.com/yudi-azvd)	|  |  |  | 
 
 ## Outros 
 Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
