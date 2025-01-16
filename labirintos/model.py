@@ -14,16 +14,20 @@ class MazeModel(mesa.Model):
 
         self.grid = MultiGrid(maze.width, maze.height, torus=False)
 
-        self.grid.place_agent(RunnerAgent(self, maze), (0, 0))
+        for y, row in enumerate(maze.data):
+            _y = maze.height - y - 1
+            for x, _ in enumerate(row):
+                if maze.data[y][x] == Maze.WALL:
+                    self.grid.place_agent(WallAgent(self), (x, _y))
+                elif maze.data[y][x] == Maze.EXIT:
+                    self.grid.place_agent(ExitAgent(self), (x, _y))
+                elif maze.data[y][x] == Maze.START:
+                    # TODO: iterar sobre todos os runners e colocá-los na posição inicial: S
+                    # Não precisa ser feito nesse loop. Pode ser feito em outro lugar
+                    self.grid.place_agent(RunnerAgent(self, maze), (x, _y))
+                elif maze.data[y][x] == Maze.START:
+                    self.grid.place_agent(StartAgent(self), (x, _y))
 
-        for x, row in enumerate(maze.data):
-            for y, _ in enumerate(row):
-                if maze.data[x][y] == Maze.WALL:
-                    self.grid.place_agent(WallAgent(self), (x, y))
-                elif maze.data[x][y] == Maze.EXIT:
-                    self.grid.place_agent(ExitAgent(self), (x, y))
-                elif maze.data[x][y] == Maze.START:
-                    self.grid.place_agent(StartAgent(self), (x, y))
 
         print("Dim", maze.width, maze.height)
         for row in maze.data:
