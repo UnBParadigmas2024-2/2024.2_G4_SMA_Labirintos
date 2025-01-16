@@ -33,10 +33,13 @@ Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
 Insira um manual ou um script para auxiliar ainda mais.
 Gifs animados e outras ilustrações são bem-vindos!
 
-## Uso 
-Explique como usar seu projeto.
-Procure ilustrar em passos, com apoio de telas do software, seja com base na interface gráfica, seja com base no terminal.
-Nessa seção, deve-se revelar de forma clara sobre o funcionamento do software.
+## Uso
+
+```
+pip install -r requirements.txt
+
+solara run app.py
+```
 
 ## Vídeo
 Adicione 1 ou mais vídeos com a execução do projeto.

@@ -15,7 +15,7 @@ class Maze:
 
 # state S_PARSING_MAZE_DATA
 
-def parse_map_file(file_path: str) -> list[str]:
+def parse_map_file(file_path: str) -> Maze:
     __map = []
     width = 0
     height = 0
@@ -40,10 +40,6 @@ def parse_map_file(file_path: str) -> list[str]:
             data.append(row)
 
     maze = Maze(width, height, data)
-
-    print("Dim", maze.width, maze.height)
-    for row in maze.data:
-        print("".join(row))
     return maze
 
 
