@@ -36,18 +36,16 @@ def post_process(ax):
 
 
 model_params = {
-    # Adianta? Tem como recriar o modelo passando um mapa diferente?
-    # O modelo pode acessar esses parâmetros depois? Sim é possível
-    "map_path": {
+    "maze_map_path": {
         "type": "InputText",
         "value": "maps/map1.txt",
         "label": "Caminho do arquivo do mapa",
     },
-    # "seed": {
-    #     "type": "InputText",
-    #     "value": 42,
-    #     "label": "Random Seed",
-    # },
+    "seed": {
+        "type": "InputText",
+        "value": 42,
+        "label": "Random Seed",
+    },
 }
 
 model = MazeModel()
