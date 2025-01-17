@@ -38,4 +38,4 @@ class MazeModel(mesa.Model):
 
     def step(self) -> None:
         self.agents_by_type[EnemyAgent].do("walk")
-        # self.agents_by_type[RunnerAgent].do("do_thing")
+        self.agents_by_type[RunnerAgent].do("walk")

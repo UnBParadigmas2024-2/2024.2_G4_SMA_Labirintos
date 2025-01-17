@@ -2,13 +2,7 @@ import mesa
 from mesa.space import Position
 
 from labirintos.parse_maps import Maze
-
-
-def to_maze_space(x: int, y: int, maze: Maze) -> Position:
-    """Espaço do MultiGrid -> Espaço do Maze ->"""
-    y = maze.height - y - 1
-    x, y = y, x
-    return (x, y)
+from labirintos.util import to_maze_space
 
 
 def is_within_bounds(x: int, y: int, maze: Maze) -> bool:
@@ -64,8 +58,8 @@ class EnemyAgent(mesa.Agent):
                 visited_positions.add(curr_pos)
                 self.path.append(curr_pos)
 
-        print("Path resolvido ID", self.unique_id)
-        print(self.path)
+        # print(f"ID {self.unique_id}: Path resolvido")
+        # print(self.path)
 
     def walk(self) -> None:
         if self.path_index == 0:
@@ -74,8 +68,6 @@ class EnemyAgent(mesa.Agent):
             self.path_index_inc = -1
 
         self.path_index += self.path_index_inc
-
-        print(self.unique_id, "Index:", self.path_index)
 
         new_pos = self.path[self.path_index]
 
