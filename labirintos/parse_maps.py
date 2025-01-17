@@ -1,45 +1,108 @@
+from mesa.space import Position
+
 
 class Maze:
     WALL = "#"
     EMPTY = " "
     EXIT = "E"
     START = "S"
+    ENEMY = "N"
 
-    def __init__(self, w: int, h: int, data: list[list[str]]) -> None:
-        self.width = w
-        self.height = h
-        self.data = data
+    def __init__(self) -> None:
+        """As posições vão ser convertidas para sistema de coordenadas do
+        `MultiGrid`"""
 
+        self.width = 0
+        self.height = 0
+        self.data = []
+        self.start_pos: Position = (0, 0)
+        self.exit_pos: Position = (0, 0)
+        self.enemies: list[Position] = []
+        self.walls: list[Position] = []
 
+    def print(self, show_data=True):
+        res = "Maze info:\n"
+        res += f"M.width  {self.width}    \n"
+        res += f"M.height {self.height}   \n"
+        res += f"M.start  {self.start_pos}\n"
+        res += f"M.exit   {self.exit_pos} \n"
+        res += f"len M.data    {len(self.data)}    \n"
+        res += f"len M.data[0] {len(self.data[0])} \n"
 
+        if show_data:
+            res += f"M.data[0] {(self.data[1])} \n"
+            for row in self.data:
+                res += "".join(row) + "\n"
 
-# state S_PARSING_MAZE_DATA
+        print(res)
+
 
 def parse_map_file(file_path: str) -> Maze:
-    __map = []
-    width = 0
-    height = 0
-    data: list[list[str]] = []
     with open(file_path, "r") as f:
         lines = f.readlines()
-        __map: list[str] = []
-        for line in lines:
-            if line.startswith("/"):  # Comentário, apenas ignore
-                continue
-            else:
-                __map.append(line)
 
-        w, h = __map[0].strip().split(" ")
-        width = int(w)
-        height = int(h)
+    start_count = 0
+    exit_count = 0
+    maze = Maze()
+    map_builder: list[str] = []
 
-        for line in __map[1:]:
-            row = []
-            for el in line.strip():
-                row.append(el)
-            data.append(row)
+    # Apenas descarta comentários no inicío do arquivo
+    for line in lines:
+        if line.startswith("/"):
+            continue
+        else:
+            map_builder.append(line)
 
-    maze = Maze(width, height, data)
+    w, h = map_builder[0].strip().split(" ")
+    maze.width = int(w)
+    maze.height = int(h)
+
+    for y, line in enumerate(map_builder[1:]):
+        row = []
+        for x, cell in enumerate(line.strip()):
+            """
+            Na grade do web app, os valores de y crescem de baixo pra cima.
+            `pos` está no sistema de coordenadas do `MultiGrid`, não do `maze.data`.
+            """
+            pos = (x, maze.height - y - 1)
+
+            if cell == Maze.WALL:
+                maze.walls.append(pos)
+            elif cell == Maze.START:
+                start_count += 1
+                maze.start_pos = pos
+            elif cell == Maze.EXIT:
+                exit_count += 1
+                maze.exit_pos = pos
+            elif cell == Maze.ENEMY:
+                maze.enemies.append(pos)
+
+            row.append(cell)
+
+        maze.data.append(row)
+
+    if start_count != 1:
+        print("ERRO: O mapa deve ter exatamente um início")
+        exit(1)
+    if exit_count != 1:
+        print("ERRO: O mapa deve ter exatamente uma saída")
+        exit(1)
+
+    # Descomente esses print's com o maps/map1.txt pra entender as coordenadas
+    # print("\n>>> Cheque essas posições")
+    # positions = [
+    #     (2, 4),
+    #     (2, 5),
+    #     (0, 5),
+    #     (1, 6),
+    #     (1, 1),
+    #     (maze.width - 2, maze.height - 2),
+    # ]
+    # for p in positions:
+    #     x, y = p
+    #     print(p, f"[{maze.data[x][y]}]")
+    # print("<<< maze.data[2]")
+    # print(maze.data[2])
+    # maze.print()
+
     return maze
-
-
