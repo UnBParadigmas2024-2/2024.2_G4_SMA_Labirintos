@@ -18,8 +18,6 @@ class MazeModel(mesa.Model):
 
         self.grid = MultiGrid(maze.width, maze.height, torus=False)
 
-        self.grid
-
         for pos in maze.walls:
             self.grid.place_agent(WallAgent(self), pos)
 
@@ -39,3 +37,4 @@ class MazeModel(mesa.Model):
     def step(self) -> None:
         self.agents_by_type[EnemyAgent].do("walk")
         self.agents_by_type[RunnerAgent].do("walk")
+        print("#agents", len(self.agents_by_type[RunnerAgent]))

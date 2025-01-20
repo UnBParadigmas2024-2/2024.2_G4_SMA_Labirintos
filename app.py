@@ -14,7 +14,16 @@ def agent_portrayal(agent: mesa.Agent):
     p = {"size": 120, "marker": "s"}
 
     if isinstance(agent, RunnerAgent):
-        p["color"] = "green"
+        health_percent = agent.health / RunnerAgent.MAX_HEALTH
+        p["color"] = "#00ff00FF"
+        if health_percent == 1.0:
+            p["color"] = "#00ff00FF"
+        elif health_percent > 0.7:
+            p["color"] = "#00ff0099"
+        elif health_percent > 0.4:
+            p["color"] = "#00ff0033"
+        elif health_percent <= 0:
+            p["color"] = "white"
         p["size"] = 40
     elif isinstance(agent, EnemyAgent):
         p["color"] = "red"
