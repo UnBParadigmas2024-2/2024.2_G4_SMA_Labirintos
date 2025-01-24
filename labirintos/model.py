@@ -38,3 +38,7 @@ class MazeModel(mesa.Model):
         self.agents_by_type[EnemyAgent].do("walk")
         self.agents_by_type[RunnerAgent].do("walk")
         print("#agents", len(self.agents_by_type[RunnerAgent]))
+
+        total_runners = len(self.agents_by_type[RunnerAgent])
+        if total_runners < 8:
+            self.running = False
