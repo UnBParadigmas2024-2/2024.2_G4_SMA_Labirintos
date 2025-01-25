@@ -7,16 +7,15 @@ from labirintos.agents.enemy import EnemyAgent
 from labirintos.agents.static_agents import WallAgent, ExitAgent, StartAgent
 
 
+from labirintos.agents.key import KeyAgent
+
 class MazeModel(mesa.Model):
-    def __init__(
-        self, maze_map_path="maps/map1.txt", runners_count=10, seed=None
-    ) -> None:
+    def __init__(self, maze_map_path="maps/map1.txt", runners_count=1, seed=None) -> None:
         super().__init__(seed=seed)
 
-        # TODO: Se der errado, carregar um mapa default, válido, mas sem paredes?
         maze = parse_map_file(maze_map_path)
-
         self.grid = MultiGrid(maze.width, maze.height, torus=False)
+        self.key_collected = False
 
         for pos in maze.walls:
             self.grid.place_agent(WallAgent(self), pos)
@@ -24,15 +23,13 @@ class MazeModel(mesa.Model):
         for pos in maze.enemies:
             self.grid.place_agent(EnemyAgent(self, maze, pos), pos)
 
-        # Os runners spawnam no start position
         for _ in range(runners_count):
             self.grid.place_agent(RunnerAgent(self, maze), maze.start_pos)
 
         self.grid.place_agent(StartAgent(self), maze.start_pos)
-
         self.grid.place_agent(ExitAgent(self), maze.exit_pos)
 
-        # maze.print()
+        self.grid.place_agent(KeyAgent(self), maze.key_pos)
 
     def step(self) -> None:
         self.agents_by_type[EnemyAgent].do("walk")
