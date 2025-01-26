@@ -11,7 +11,6 @@ class RunnerAgent(mesa.Agent):
     PHEROMONE_STRENGTH = 1
     PHEROMONE_DECAY = 0.1
     PHEROMONE_RANGE = 20
-    has_key = False
 
     def __init__(self, model, maze: Maze) -> None:
         super().__init__(model)
@@ -19,6 +18,7 @@ class RunnerAgent(mesa.Agent):
         self.health = self.MAX_HEALTH
         self.pheromone_strength = 0
         self.reached_exit = False
+        self.has_key = False
 
     def distance_to_exit(self):
         # Calcula a distância Manhattan até a saída
@@ -45,6 +45,10 @@ class RunnerAgent(mesa.Agent):
         return self.maze.data[x][y] != Maze.WALL
 
     def find_closest_pheromone(self):
+        # Verifica se o runner possui a chave
+        if not self.has_key:
+            return None
+
         # Encontra o feromônio mais forte dentro do alcance e retorna a posição dele
         max_pheromone_strength = 0
         target_pos = None
@@ -60,11 +64,12 @@ class RunnerAgent(mesa.Agent):
 
     def walk(self):
         # Faz o agente runner andar, liberando feromônios ou seguindo os mais fortes
-        if self.pos == self.maze.exit_pos and not self.reached_exit:
+        if self.pos == self.maze.exit_pos and self.has_key and not self.reached_exit:
             self.pheromone_strength = 10  # Libera feromônio ao chegar na saída
-            print(f"Runner {self.unique_id} reached the exit and is releasing pheromones!")
+            print(f"Runner {self.unique_id} reached the exit with the key and is releasing pheromones!")
             self.model.release_pheromones(self.pos, self.pheromone_strength)
-            self.reached_exit = True
+            self.reached_exit = True  # Marca que o runner chegou na saída
+            self.model.AGENTS_OUT += 1
             return
 
         if self.reached_exit:
