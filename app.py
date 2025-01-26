@@ -5,6 +5,7 @@ from labirintos.agents.runner import RunnerAgent
 from labirintos.agents.enemy import EnemyAgent
 from labirintos.agents.static_agents import WallAgent, ExitAgent, StartAgent
 from labirintos.agents.key import KeyAgent
+from labirintos.agents.food import FoodAgent
 
 
 def agent_portrayal(agent: mesa.Agent):
@@ -42,6 +43,10 @@ def agent_portrayal(agent: mesa.Agent):
     elif isinstance(agent, WallAgent):
         p["color"] = "#000000"  
         p["marker"] = "s"  
+    elif isinstance(agent, FoodAgent):
+        p["color"] = "#4CAF50"  
+        p["marker"] = "h"  
+        p["size"] = 90
 
     return p
 
