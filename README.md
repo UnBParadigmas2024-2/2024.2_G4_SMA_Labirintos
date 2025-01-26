@@ -19,26 +19,167 @@
 | 16/0149410 | [Yudi Yamane de Azevedo](https://github.com/yudi-azvd)	| 
 
 ## Sobre 
-Descreva o seu projeto em linhas gerais. 
-Use referências, links, que permitam conhecer um pouco mais sobre o projeto.
-Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no projeto.
+Este projeto é uma simulação de um labirinto utilizando o [Mesa](https://mesa-readthedocs-io.translate.goog/stable/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc) e a ferramenta [Solara](https://solara.dev/), que são, respectivamente, uma biblioteca para construção de modelos baseados em agentes e uma biblioteca para Python que facilita a criação de interfaces de usuário (UI) interativas e dinâmicas. O objetivo principal é criar um cenário dinâmico onde agentes (representados por corredores e inimigos) interagem e competem para alcançar a saída do labirinto, enquanto enfrentam obstáculos e buscam por chaves.
+
+A simulação permite observar o comportamento de diferentes tipos de agentes, como Runners (corredores), Enemies (inimigos), e Key Agents (chaves), enquanto os dois primeiros se movem dentro de um labirinto gerado a partir de mapas definidos. Além disso, a interação entre os corredores é mediada por um sistema de feromônios que serve para guiá-los até a saída.
+
+### Componentes Principais
+
+Maze Model (Modelo do Labirinto): Controla o ambiente, onde os agentes são colocados. Inclui a estrutura do labirinto, com paredes, corredores, chaves e a saída.
+
+- Agents (Agentes):
+  - EnemyAgent: Inimigos que percorrem trajetos fixos no labirinto, indo e voltando.
+  - RunnerAgent: Corredores que tentam alcançar a saída do labirinto. Eles podem coletar chaves e liberar feromônios para guiar outros corredores.
+  - KeyAgent: Representa a chave que os corredores precisam para acessar a saída.
+  - ExitAgent: A saída do labirinto.
+  - WallAgent: Representa as paredes que bloqueiam o caminho.
+
+- Sistema de Feromônios: Corredores ao chegarem na saída em posse da chave liberam feromônios para ajudar outros agentes a encontrar o caminho mais rápido. Esses feromônios se dissipam com o tempo.
+
+### Recursos Adicionais
+
+Para explorar mais sobre as ferramentas e conceitos utilizados neste projeto:
+
+- [Mesa - Documentação Oficial](https://mesa-readthedocs-io.translate.goog/stable/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc): Uma excelente fonte para entender o uso de modelos baseados em agentes e como aplicá-los em simulações complexas.
+- [Solara - Documentação Oficial](https://solara.dev/): A documentação oficial da biblioteca Solara, que facilita a criação de interfaces de usuário interativas em Python.
+- [Introdução ao Paradigma de Agentes](https://www.devmedia.com.br/introducao-ao-paradigma-orientado-a-agentes/28791): Um artigo introdutório que explora o paradigma de agentes e suas aplicações em simulações e jogos.
+- [Mesa Examples](https://mesa.readthedocs.io/stable/examples.html): Exemplos práticos de como usar a biblioteca Mesa para criar simulações e modelos baseados em agentes.
+
+Esses recursos são ideais para aprender mais sobre a construção de simulações com agentes, como otimizar o comportamento dos agentes no labirinto e como criar interfaces dinâmicas e interativas com Solara. 
+O repositório está aberto para sugestões e contribuições. Fique à vontade para melhorar o código, adicionar novos recursos ou simplesmente compartilhar suas ideias.
 
 ## Screenshots
 Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
 
 ## Instalação 
-**Linguagens**: xxxxxx<br>
-**Tecnologias**: xxxxxx<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
-Insira um manual ou um script para auxiliar ainda mais.
-Gifs animados e outras ilustrações são bem-vindos!
+**Linguagens**: [Python3](https://docs.python.org/3/)<br>
+**Tecnologias**: [Mesa](https://mesa-readthedocs-io.translate.goog/stable/getting_started.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc)<br>
+
+### Pré-requisitos
+
+Antes de começar a rodar o projeto, você precisará ter o [Python3](https://docs.python.org/3/) e o [pip](https://pip.pypa.io/en/stable/) instalados em seu sistema. Siga as instruções abaixo para garantir que todos os pré-requisitos estejam configurados corretamente:
+
+1. Instalar o Python 3
+
+**Para Windows:**
+
+Baixe o Python 3 no [site oficial](https://www.python.org/downloads/).
+Execute o instalador e, durante a instalação, marque a opção Add Python to PATH.
+
+**Para macOS:**
+
+O Python 3 geralmente já está pré-instalado. Caso não tenha, você pode instalar usando o Homebrew:
+
+```bash
+    brew install python
+```
+
+**Para Linux:**
+
+Em distribuições baseadas no Debian (como Ubuntu), use o seguinte comando:
+
+```bash
+  sudo apt update
+  sudo apt install python3
+```
+
+Em distribuições baseadas no Red Hat, use:
+
+```bash
+  sudo dnf install python3
+```
+
+2. Instalar o pip
+
+O pip é o gerenciador de pacotes do Python. Em muitos sistemas, ele já vem instalado junto com o Python. Para verificar se o pip está instalado, execute:
+
+```bash
+  pip --version
+```
+
+Caso o pip não esteja instalado, execute o seguinte comando para instalar:
+
+```bash
+  python3 -m ensurepip --upgrade
+```
+
+3. Criando um Ambiente Virtual (opcional, mas recomendado)
+
+É uma boa prática usar um ambiente virtual para evitar a instalação de dependências diretamente no sistema, o que pode causar conflitos entre projetos. O venv permite criar um ambiente isolado para o seu projeto.
+
+Crie um ambiente virtual: Na pasta do projeto, execute o comando abaixo para criar um ambiente virtual. O nome do ambiente pode ser qualquer nome, como venv:
+
+```bash
+  python3 -m venv venv
+```
+
+Ative o ambiente virtual:
+
+**Para Windows:**
+
+```bash
+  venv\Scripts\activate
+```
+
+**Para macOS/Linux:**
+
+```bash
+  source venv/bin/activate
+```
+
+Ao ativar o ambiente virtual, você verá o nome do ambiente aparecer no terminal, indicando que o ambiente virtual está ativo.
+
+Quando terminar de trabalhar no projeto, você pode desativar o ambiente virtual com o comando:
+
+```bash
+  deactivate
+```
+
+4. Baixar as dependências do projeto
+
+Uma vez que o Python, o pip e o ambiente virtual estejam configurados corretamente, você pode instalar as dependências necessárias para o projeto. Para isso, basta seguir os passos abaixo:
+
+Clone o repositório ou baixe os arquivos do projeto.
+
+Abra o terminal ou prompt de comando na pasta do projeto.
+
+Execute o seguinte comando para instalar as dependências listadas no arquivo requirements.txt:
+
+```bash
+  pip install -r requirements.txt
+```
+
+Esse comando irá baixar e instalar todas as dependências do projeto, incluindo as bibliotecas Mesa, Solara e outras necessárias para a execução da simulação.
+
+5. Executando o projeto
+
+Após a instalação das dependências, você pode rodar o projeto com o seguinte comando:
+
+```bash
+  solara run app.py
+```
+
+6. Problemas comuns
+
+- Problema: Dependência não encontrada
+  - Verifique se você tem a versão correta do Python instalada.
+  - Certifique-se de estar usando o pip correto (em alguns sistemas, pode ser necessário usar pip3 ao invés de pip).
+
+- Problema: Erro de permissão ao instalar pacotes
+  - Se você estiver tendo problemas de permissão, tente usar o sudo no Linux/macOS:
+
+```bash
+  sudo pip install -r requirements.txt
+```
+
+Sinta-se à vontade para contribuir com melhorias ou relatar problemas no repositório.
 
 ## Uso
 
 ```
-pip install -r requirements.txt
+  pip install -r requirements.txt
 
-solara run app.py
+  solara run app.py
 ```
 
 ## Vídeo
@@ -66,12 +207,47 @@ TEMPO: +/- 15min
 | [Yudi Yamane de Azevedo](https://github.com/yudi-azvd)	|  |  |  | 
 
 ## Outros 
-Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
-(i) Lições Aprendidas;
-(ii) Percepções;
-(iii) Contribuições e Fragilidades, e
-(iV) Trabalhos Futuros.
+
+Nesse tópicos estão disponibilizadas algumas percepções dos membros do grupo
+
+### Lições Aprendidas e Percepções
+
+- O paradigma SMA foi um pouco mais desafiador, mas a dinâmica de múltiplos agentes trabalhando em conjunto trouxe um aspecto mais orgânico ao projeto. Apesar de ser mais complicado no começo, ele nos proporcionou uma ótima oportunidade para entender como agentes podem interagir e colaborar.
+
+- Trabalhar com agentes em vez de uma abordagem centralizada fez com que o desenvolvimento se tornasse mais modular e flexível, mas também nos exigiu lidar com interações complexas entre os elementos do jogo.
+
+- Acredito que conseguimos trazer uma boa adaptação do modelo SMA para o contexto de labirintos, mas precisamos evoluir mais na parte da movimentação e na introdução de novos tipos de comportamento para os agentes.
+
+### Contribuições
+
+O projeto foi desenvolvido com a colaboração ativa de alguns dos membros da equipe. Durante o desenvolvimento, fomos capazes de integrar a estrutura básica de um sistema multiagentes (SMA), utilizando o Solara para interface de usuário e o Mesa para gerar a simulaçaõ da resolução do labirinto pelos agentes denominados 'runners'. O uso de feromônios para atrair os agentes até pontos específicos do labirinto foi um dos principais diferenciais, trazendo maior dinâmica ao jogo. Também foi implementada uma lógica de detecção de eventos, como a coleta da chave pelos 'runners'.
+
+### Fragilidades
+
+- O nível de complexidade do projeto poderia ser maior, já que o comportamento dos agentes ainda está muito restrito e os eventos não são suficientemente dinâmicos.
+- O modelo de agentes autônomos é interessante, mas ainda carece de comportamentos mais elaborados. A movimentação dos 'enemies' é fixada, o que não permite que eles respondam de forma mais dinâmica ao ambiente ou ao comportamento dos 'runners'.
+- A interação entre os agentes e a página web criada com o Solara ainda não é totalmente robusta. Existem limitações na forma como o Solara gerencia a atualização e configuração das propriedades da simulação.
+- O projeto ainda não apresenta uma complexidade avançada em termos de decisões autônomas dos agentes. A ausência de uma interações mais detalhadas entre os agentes limita o grau de sofisticação do sistema.
+
+### Trabalhos Futuros
+
+- **Melhorar a Movimentação dos Agentes:** Atualmente, a movimentação dos 'runners' e dos 'enemies' é bastante simplificada. Um dos próximos passos é aprimorar esses movimentos, tornando-os mais objetivos e com a possibilidade de interagir de forma mais dinâmica com o ambiente e outros agentes.
+- **Adicionar Maior Interatividade na Página Web:** O Solara proporciona uma interface interessante, mas seria interessante implementar funcionalidades que permitam ao usuário alterar mais parâmetros diretamente pela interface, como por exemplo, ajustar as configurações do labirinto ou dos agentes (comportamento, entre outros).
+- **Movimentação dos 'Enemies':** A movimentação dos inimigos precisa ser ajustada para não ser fixa. Uma solução possível seria incorporar uma lógica de movimentação baseada em percepções do ambiente e feromônios deixados pelos 'runners'.
+- **Introduzir Feromônios ao Encontrar a Chave:** Uma das melhorias seria permitir que os agentes deixem feromônios ao encontrar a chave, assim como já fazem ao achar a saída em posse da chave. Isso geraria uma dinâmica mais interessante e complexa para o comportamento dos 'runners' e 'enemies'.
+- **Aprimorar Configurações do Labirinto:** Alterar o labirinto ou os parâmetros de agentes através da interface web criaria uma experiência mais interativa e flexível. Isso permitiria testar diferentes estratégias de jogo, além de tornar o projeto mais aberto a modificações e ajustes.
+- **Adicionar Novos Tipos de Agentes:** Expandir o projeto para incluir diferentes tipos de agentes com comportamentos variados poderia aumentar a complexidade e tornar o sistema mais interessante. Diferentes tipos de 'runners', inimigos e até aliados poderiam ser implementados.
+- **Adicionar "comida":** Seria interessante adicionar "comida" pelo labirinto para que os 'runners' pudessem recuperar parte da vida, caso tivessem perdido ao entrar em contato com os enemies
+
 
 ## Fontes
-Referencie, adequadamente, as referências utilizadas.
-Indique ainda sobre fontes de leitura complementares.
+
+- [Mesa - Documentação Oficial](https://mesa-readthedocs-io.translate.goog/stable/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc)
+- [Solara - Documentação Oficial](https://solara.dev/)
+- [Introdução ao Paradigma de Agentes](https://www.devmedia.com.br/introducao-ao-paradigma-orientado-a-agentes/28791)
+- [Mesa Examples](https://mesa.readthedocs.io/latest/examples.html)
+- ["Multiagent Systems: A Modern Approach to Distributed Artificial Intelligence" de Gerhard Weiss"](https://www.researchgate.net/publication/277217082_Weiss_Gerhard_Multiagent_Systems_a_Modern_Approach_to_Distributed_Artificial_Intelligence)
+- ["The Nature of Code" de Daniel Shiffman"](https://natureofcode.com/)
+- [Python3 Documentation](https://docs.python.org/3/)
+- [pip Documentation](https://pip.pypa.io/en/stable/)
+- [venv Documentation](https://docs.python.org/3/library/venv.html)
