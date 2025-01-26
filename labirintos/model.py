@@ -5,6 +5,7 @@ from labirintos.agents.runner import RunnerAgent
 from labirintos.agents.enemy import EnemyAgent
 from labirintos.agents.static_agents import WallAgent, ExitAgent, StartAgent
 from labirintos.agents.key import KeyAgent
+from labirintos.agents.food import FoodAgent
 
 RUNNERS_COUNT = 10
 maze_maps = [
@@ -16,14 +17,19 @@ level = 0
 
 class MazeModel(mesa.Model):
     def __init__(self, maze_map_path=maze_maps[level], runners_count=RUNNERS_COUNT, seed=None) -> None:
-        # Inicializa o modelo, carrega o mapa e posiciona os agentes
-
         super().__init__(seed=seed)
-
+        
         maze = parse_map_file(maze_map_path)
         self.grid = MultiGrid(maze.width, maze.height, torus=False)
         self.pheromones = {}
         self.AGENTS_OUT = 0
+        
+        # print para verificar posições de comida
+        print(f"Inicializando {len(maze.food)} posições de comida:")
+        for pos in maze.food:
+            food_agent = FoodAgent(self)
+            self.grid.place_agent(food_agent, pos)
+            print(f"Comida colocada em {pos}")
 
          # Coloca as paredes no mapa
         for pos in maze.walls:
