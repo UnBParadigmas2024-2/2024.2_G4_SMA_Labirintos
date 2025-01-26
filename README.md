@@ -49,7 +49,10 @@ Esses recursos são ideais para aprender mais sobre a construção de simulaçõ
 O repositório está aberto para sugestões e contribuições. Fique à vontade para melhorar o código, adicionar novos recursos ou simplesmente compartilhar suas ideias.
 
 ## Screenshots
-Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
+
+O vídeo mostra o projeto do **Labirintos** em execução
+
+<img src="./imagens/" alt="Gif do projeto em funcionamento" style="max-width:100%; height:auto;">
 
 ## Instalação 
 **Linguagens**: [Python3](https://docs.python.org/3/)<br>
