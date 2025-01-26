@@ -1,7 +1,9 @@
 import mesa
+from labirintos.agents.key import KeyAgent
 from labirintos.parse_maps import Maze
 from labirintos.util import to_maze_space
 from labirintos.agents.enemy import EnemyAgent
+from labirintos.agents.static_agents import ExitAgent
 from collections import deque
 
 class RunnerAgent(mesa.Agent):
@@ -9,6 +11,7 @@ class RunnerAgent(mesa.Agent):
     PHEROMONE_STRENGTH = 1
     PHEROMONE_DECAY = 0.1
     PHEROMONE_RANGE = 20
+    has_key = False
 
     def __init__(self, model, maze: Maze) -> None:
         super().__init__(model)
@@ -100,3 +103,14 @@ class RunnerAgent(mesa.Agent):
                 if self.health <= 0:
                     print("Runner", self.unique_id, "died. Being removed")
                     self.remove()
+            if isinstance(a, KeyAgent):
+                if not self.has_key:  
+                    self.has_key = True
+                    print(f"Runner {self.unique_id} pegou a chave!")  
+                else:
+                    print(f"Runner {self.unique_id} já possui a chave!")
+            if isinstance(a, ExitAgent):
+                if self.has_key:
+                    print(f"Runner {self.unique_id} saiu do labirinto!")
+                else:
+                    print(f"Runner {self.unique_id} precisa da chave para sair!")

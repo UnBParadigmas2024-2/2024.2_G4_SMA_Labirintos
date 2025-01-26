@@ -4,10 +4,12 @@ from labirintos.parse_maps import parse_map_file
 from labirintos.agents.runner import RunnerAgent
 from labirintos.agents.enemy import EnemyAgent
 from labirintos.agents.static_agents import WallAgent, ExitAgent, StartAgent
+from labirintos.agents.key import KeyAgent
 
 class MazeModel(mesa.Model):
     def __init__(self, maze_map_path="maps/map1.txt", runners_count=10, seed=None) -> None:
         # Inicializa o modelo, carrega o mapa e posiciona os agentes
+
         super().__init__(seed=seed)
 
         maze = parse_map_file(maze_map_path)
@@ -29,6 +31,7 @@ class MazeModel(mesa.Model):
         # Coloca os agentes de início e saída no mapa
         self.grid.place_agent(StartAgent(self), maze.start_pos)
         self.grid.place_agent(ExitAgent(self), maze.exit_pos)
+        self.grid.place_agent(KeyAgent(self), maze.key_pos)
 
     def step(self) -> None:
         # Executa uma etapa do modelo, atualizando o estado de todos os agentes

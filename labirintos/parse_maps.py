@@ -1,12 +1,12 @@
 from mesa.space import Position
 
-
 class Maze:
     WALL = "#"
     EMPTY = " "
     EXIT = "E"
     START = "S"
     ENEMY = "N"
+    KEY = "K"
 
     def __init__(self) -> None:
         """As posições vão ser convertidas para sistema de coordenadas do
@@ -19,6 +19,7 @@ class Maze:
         self.exit_pos: Position = (0, 0)
         self.enemies: list[Position] = []
         self.walls: list[Position] = []
+        self.key_pos: Position = None
 
     def print(self, show_data=True):
         res = "Maze info:\n"
@@ -76,6 +77,8 @@ def parse_map_file(file_path: str) -> Maze:
                 maze.exit_pos = pos
             elif cell == Maze.ENEMY:
                 maze.enemies.append(pos)
+            elif cell == Maze.KEY:
+                maze.key_pos = pos
 
             row.append(cell)
 
