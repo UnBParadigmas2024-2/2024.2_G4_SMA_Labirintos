@@ -79,8 +79,3 @@ class MazeModel(mesa.Model):
         # Retorna a intensidade de feromônio em uma posição
         return self.pheromones.get(position, 0)
 
-# if __name__ == "__main__":
-#     # Inicializa o primeiro nível do jogo
-#     current_model = MazeModel(maze_map_path=maze_maps[level], runners_count=RUNNERS_COUNT)
-#     while current_model.running:
-#         current_model.step()
