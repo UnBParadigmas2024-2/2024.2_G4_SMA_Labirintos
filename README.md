@@ -206,7 +206,7 @@ TEMPO: +/- 15min
 | [Levi de Oliveira Queiroz](https://github.com/LeviQ27) |  |  |  |	
 | [Matheus Fonseca Sousa](https://github.com/gatotabaco) |  |  |  |	
 | [Matheus Costa Gomes](https://github.com/mc-gomes) |  |  |  |	
-| [Rafael Brito Bosi Rodrigues](https://github.com/StrangeUnit28) |  |  |  |	
+| [Rafael Brito Bosi Rodrigues](https://github.com/StrangeUnit28) | Ajuste na feature da chave, ajuste para que o feromônio só afetasse runners que possuissem a chave, ajuste para que apenas runners que achessem a saída e possuissem a chave soltassem feromônio, adição de novos mapas, tentativa de implementação de níveis, documentação do projeto e ajuste no visual do labirinto| Boa | [commits](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commits?author=StrangeUnit28) |	
 | [Yudi Yamane de Azevedo](https://github.com/yudi-azvd)	| Setup do projeto, Parser de mapas (arquivos txt), comportamento do agente inimigo, agente corredor toma dano quando na mesma casa que um inimigo  | Boa  | [commits](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commits/main/?author=yudi-azvd)  | 
 
 
