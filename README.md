@@ -244,13 +244,13 @@ O projeto foi desenvolvido com a colaboração ativa de alguns dos membros da eq
 
 ## Fontes
 
-- [Mesa - Documentação Oficial](https://mesa-readthedocs-io.translate.goog/stable/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc)
-- [Exemplo Mesa Predação Lobo-Ovelha](https://mesa.readthedocs.io/stable/examples/advanced/wolf_sheep.html). Aceesso em 15 de janeiro de 2025.
-- [Solara - Documentação Oficial](https://solara.dev/)
-- [Introdução ao Paradigma de Agentes](https://www.devmedia.com.br/introducao-ao-paradigma-orientado-a-agentes/28791)
-- [Mesa Examples](https://mesa.readthedocs.io/latest/examples.html)
-- ["Multiagent Systems: A Modern Approach to Distributed Artificial Intelligence" de Gerhard Weiss"](https://www.researchgate.net/publication/277217082_Weiss_Gerhard_Multiagent_Systems_a_Modern_Approach_to_Distributed_Artificial_Intelligence)
-- ["The Nature of Code" de Daniel Shiffman"](https://natureofcode.com/)
-- [Python3 Documentation](https://docs.python.org/3/)
-- [pip Documentation](https://pip.pypa.io/en/stable/)
-- [venv Documentation](https://docs.python.org/3/library/venv.html)
+- [Mesa - Documentação Oficial](https://mesa-readthedocs-io.translate.goog/stable/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc). Acesso em 24 de janeiro de 2025.
+- [Exemplo Mesa Predação Lobo-Ovelha](https://mesa.readthedocs.io/stable/examples/advanced/wolf_sheep.html). Acesso em 15 de janeiro de 2025.
+- [Solara - Documentação Oficial](https://solara.dev/). Acesso em 26 de janeiro de 2025.
+- [Introdução ao Paradigma de Agentes](https://www.devmedia.com.br/introducao-ao-paradigma-orientado-a-agentes/28791). Acesso em 25 de janeiro de 2025.
+- [Mesa Examples](https://mesa.readthedocs.io/latest/examples.html). Acesso em 25 de janeiro de 2025.
+- ["Multiagent Systems: A Modern Approach to Distributed Artificial Intelligence" de Gerhard Weiss"](https://www.researchgate.net/publication/277217082_Weiss_Gerhard_Multiagent_Systems_a_Modern_Approach_to_Distributed_Artificial_Intelligence). Acesso em 26 de janeiro de 2025.
+- ["The Nature of Code" de Daniel Shiffman"](https://natureofcode.com/). Acesso em 23 de janeiro de 2025.
+- [Python3 Documentation](https://docs.python.org/3/). Acesso em 25 de janeiro de 2025.
+- [pip Documentation](https://pip.pypa.io/en/stable/). Acesso em 25 de janeiro de 2025.
+- [venv Documentation](https://docs.python.org/3/library/venv.html). Acesso em 25 de janeiro de 2025.
