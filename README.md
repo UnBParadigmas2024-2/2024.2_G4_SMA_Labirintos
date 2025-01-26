@@ -204,9 +204,8 @@ TEMPO: +/- 15min
 | [Matheus Fonseca Sousa](https://github.com/gatotabaco) |  |  |  |	
 | [Matheus Costa Gomes](https://github.com/mc-gomes) |  |  |  |	
 | [Rafael Brito Bosi Rodrigues](https://github.com/StrangeUnit28) |  |  |  |	
-| [Yudi Yamane de Azevedo](https://github.com/yudi-azvd)	|  |  |  | 
+| [Yudi Yamane de Azevedo](https://github.com/yudi-azvd)	| Setup do projeto, Parser de mapas (arquivos txt), comportamento do agente inimigo, agente corredor toma dano quando na mesma casa que um inimigo  | Boa  | [commits](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commits/main/?author=yudi-azvd)  | 
 
-## Outros 
 
 Nesse tópicos estão disponibilizadas algumas percepções dos membros do grupo
 
@@ -243,6 +242,7 @@ O projeto foi desenvolvido com a colaboração ativa de alguns dos membros da eq
 ## Fontes
 
 - [Mesa - Documentação Oficial](https://mesa-readthedocs-io.translate.goog/stable/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc)
+- [Exemplo Mesa Predação Lobo-Ovelha](https://mesa.readthedocs.io/stable/examples/advanced/wolf_sheep.html). Aceesso em 15 de janeiro de 2025.
 - [Solara - Documentação Oficial](https://solara.dev/)
 - [Introdução ao Paradigma de Agentes](https://www.devmedia.com.br/introducao-ao-paradigma-orientado-a-agentes/28791)
 - [Mesa Examples](https://mesa.readthedocs.io/latest/examples.html)
