@@ -35,6 +35,11 @@ class MazeModel(mesa.Model):
         self.move_happened = False
         self.agents_by_type[EnemyAgent].do("walk")
         self.agents_by_type[RunnerAgent].do("walk")
+
+        total_runners = len(self.agents_by_type[RunnerAgent])
+        if total_runners < 8:
+            self.running = False
+        
         print(f"#agents {len(self.agents_by_type[RunnerAgent])}")
 
     def release_pheromones(self, position, strength):

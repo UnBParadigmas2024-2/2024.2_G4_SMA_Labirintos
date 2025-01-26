@@ -95,7 +95,7 @@ class RunnerAgent(mesa.Agent):
         for a in agents:
             if isinstance(a, EnemyAgent):
                 # Quantidade de dano é arbitrário. Pode mudar se quiser
-                self.health -= 1
+                self.health -= 2
                 print("Runner", self.unique_id, "took damage, H:", self.health)
                 if self.health <= 0:
                     print("Runner", self.unique_id, "died. Being removed")
