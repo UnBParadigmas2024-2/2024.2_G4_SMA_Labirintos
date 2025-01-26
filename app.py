@@ -5,7 +5,7 @@ from labirintos.agents.runner import RunnerAgent
 from labirintos.agents.enemy import EnemyAgent
 from labirintos.agents.static_agents import WallAgent, ExitAgent, StartAgent
 from labirintos.agents.key import KeyAgent
-
+from labirintos.agents.key_collector import KeyCollectorAgent
 
 def agent_portrayal(agent: mesa.Agent):
     if agent is None:
@@ -39,6 +39,10 @@ def agent_portrayal(agent: mesa.Agent):
         p["color"] = "#FFC107" 
         p["marker"] = "P"  
         p["size"] = 50  
+    elif isinstance(agent, KeyCollectorAgent): 
+        p["color"] = "#FF5722"
+        p["marker"] = "P"  
+        p["size"] = 35  
     elif isinstance(agent, WallAgent):
         p["color"] = "#000000"  
         p["marker"] = "s"  

@@ -91,21 +91,5 @@ def parse_map_file(file_path: str) -> Maze:
         print("ERRO: O mapa deve ter exatamente uma saída")
         exit(1)
 
-    # Descomente esses print's com o maps/map1.txt pra entender as coordenadas
-    # print("\n>>> Cheque essas posições")
-    # positions = [
-    #     (2, 4),
-    #     (2, 5),
-    #     (0, 5),
-    #     (1, 6),
-    #     (1, 1),
-    #     (maze.width - 2, maze.height - 2),
-    # ]
-    # for p in positions:
-    #     x, y = p
-    #     print(p, f"[{maze.data[x][y]}]")
-    # print("<<< maze.data[2]")
-    # print(maze.data[2])
-    # maze.print()
 
     return maze
