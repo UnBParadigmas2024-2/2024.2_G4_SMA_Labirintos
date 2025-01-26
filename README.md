@@ -52,7 +52,7 @@ O repositório está aberto para sugestões e contribuições. Fique à vontade 
 
 O vídeo mostra o projeto do **Labirintos** em execução
 
-<img src="./imagens/labirintoFuncionando.webm" alt="Gif do projeto em funcionamento" style="max-width:100%; height:auto;">
+<img src="./imagens/" alt="Gif do projeto em funcionamento" style="max-width:100%; height:auto;">
 
 ## Instalação 
 **Linguagens**: [Python3](https://docs.python.org/3/)<br>
