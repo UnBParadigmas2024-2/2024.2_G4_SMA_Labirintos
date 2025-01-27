@@ -256,23 +256,13 @@ Figura 2 - Controles do programa
   - Finalização: A simulação pode ser reiniciada ou pausada a qualquer momento, permitindo que o usuário experimente diferentes configurações e observe o comportamento dos agentes.
   - Acompanhamento: Durante toda a simulação, no terminal estarão sendo printadas informações detalhadas sobre o que esta acontecendo no labirinto
 
-<center>
-
 ![Terminal](./imagens/terminal.png)
 
 Figura 3 - Informações no terminal
 
-</center>
-
 ## Vídeo
-Adicione 1 ou mais vídeos com a execução do projeto.
-Procure: 
-(i) Introduzir o projeto;
-(ii) Mostrar passo a passo o código, explicando-o, e deixando claro o que é de terceiros, e o que é contribuição real da equipe;
-(iii) Apresentar particularidades do Paradigma, da Linguagem, e das Tecnologias, e
-(iV) Apresentar lições aprendidas, contribuições, pendências, e ideias para trabalhos futuros.
-OBS: TODOS DEVEM PARTICIPAR, CONFERINDO PONTOS DE VISTA.
-TEMPO: +/- 15min
+
+O vídeo de apresentação do projeto esta disponível no seguinte [link](https://www.youtube.com/watch?v=YcGyWoq1I4w) ou no próprio projeto [aqui]()
 
 ## Participações
 
