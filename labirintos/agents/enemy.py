@@ -40,7 +40,7 @@ class EnemyAgent(mesa.Agent):
         Verifica se a posição é válida (não é uma parede).
         """
         x, y = to_maze_space(pos[0], pos[1], self.maze)
-        return self.maze.data[x][y] != Maze.WALL
+        return self.maze.data[x][y] != Maze.WALL and self.maze.data[x][y] != Maze.EXIT
 
     def bfs(self, start, goal):
         """
