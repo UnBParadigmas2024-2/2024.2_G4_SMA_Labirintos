@@ -7,6 +7,7 @@ class Maze:
     START = "S"
     ENEMY = "N"
     KEY = "K"
+    FOOD = "F"
 
     def __init__(self) -> None:
         """As posições vão ser convertidas para sistema de coordenadas do
@@ -19,6 +20,7 @@ class Maze:
         self.exit_pos: Position = (0, 0)
         self.enemies: list[Position] = []
         self.walls: list[Position] = []
+        self.food: list[Position] = []
         self.key_pos: Position = None
 
     def print(self, show_data=True):
@@ -57,14 +59,13 @@ def parse_map_file(file_path: str) -> Maze:
     w, h = map_builder[0].strip().split(" ")
     maze.width = int(w)
     maze.height = int(h)
+    
+    # Debug print
+    print("Analisando mapa em busca de comida...")
 
     for y, line in enumerate(map_builder[1:]):
         row = []
         for x, cell in enumerate(line.strip()):
-            """
-            Na grade do web app, os valores de y crescem de baixo pra cima.
-            `pos` está no sistema de coordenadas do `MultiGrid`, não do `maze.data`.
-            """
             pos = (x, maze.height - y - 1)
 
             if cell == Maze.WALL:
@@ -79,10 +80,14 @@ def parse_map_file(file_path: str) -> Maze:
                 maze.enemies.append(pos)
             elif cell == Maze.KEY:
                 maze.key_pos = pos
+            elif cell == Maze.FOOD:
+                maze.food.append(pos)
 
             row.append(cell)
 
         maze.data.append(row)
+
+
 
     if start_count != 1:
         print("ERRO: O mapa deve ter exatamente um início")

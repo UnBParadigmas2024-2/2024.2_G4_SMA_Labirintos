@@ -200,17 +200,16 @@ TEMPO: +/- 15min
 
 |       Nome do Membro        | Contribuição                                                                 | Significância da Contribuição para o Projeto | Comprobatórios |
 | :-------------------------: | ---------------------------------------------------------------------------- | :----------------------------------------------------------------------------: | :-------------------------------------: |
-| [Abdul hannan](https://github.com/hannanhunny01)	|  |  |  |
+| [Abdul hannan](https://github.com/hannanhunny01)	| - Fiz sistema de busca de comida no labirinto<br>- Adicionado método de busca de comida em todo o grid<br>- Otimizado algoritmo de pathfinding para encontrar comida<br>- implementacao do sistema de priorização de busca por comida quando saúde está baixa<br>- Corrigido bug na detecção de comida no parse_map | Boa | [link para commits](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commits/main/?author=hannanhunny01) |
 | [Arthur de Melo Viana](https://github.com/arthurmlv)	| Adição do agente de coleta de chave. | Regular | [98de276d4796c414c356728b766162a938ca794d](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commit/98de276d4796c414c356728b766162a938ca794d) |
 | [Deivid Carvalho](https://github.com/deivid-a1) |  |  |  |	
 | [Felipe de Jesus Rodrigues](https://github.com/felipeJRdev) |  |  |  |
 | [Levi de Oliveira Queiroz](https://github.com/LeviQ27) |  |  |  |	
 | [Matheus Fonseca Sousa](https://github.com/gatotabaco) |  |  |  |	
 | [Matheus Costa Gomes](https://github.com/mc-gomes) |  |  |  |	
-| [Rafael Brito Bosi Rodrigues](https://github.com/StrangeUnit28) |  |  |  |	
-| [Yudi Yamane de Azevedo](https://github.com/yudi-azvd)	|  |  |  | 
+| [Rafael Brito Bosi Rodrigues](https://github.com/StrangeUnit28) | Ajuste na feature da chave, ajuste para que o feromônio só afetasse runners que possuissem a chave, ajuste para que apenas runners que achessem a saída e possuissem a chave soltassem feromônio, adição de novos mapas, tentativa de implementação de níveis, documentação do projeto e ajuste no visual do labirinto| Boa | [commits](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commits?author=StrangeUnit28) |	
+| [Yudi Yamane de Azevedo](https://github.com/yudi-azvd)	| Setup do projeto, Parser de mapas (arquivos txt), comportamento do agente inimigo, agente corredor toma dano quando na mesma casa que um inimigo  | Boa  | [commits](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commits/main/?author=yudi-azvd)  | 
 
-## Outros 
 
 Nesse tópicos estão disponibilizadas algumas percepções dos membros do grupo
 
@@ -248,12 +247,13 @@ O projeto foi desenvolvido com a colaboração ativa de alguns dos membros da eq
 
 ## Fontes
 
-- [Mesa - Documentação Oficial](https://mesa-readthedocs-io.translate.goog/stable/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc)
-- [Solara - Documentação Oficial](https://solara.dev/)
-- [Introdução ao Paradigma de Agentes](https://www.devmedia.com.br/introducao-ao-paradigma-orientado-a-agentes/28791)
-- [Mesa Examples](https://mesa.readthedocs.io/latest/examples.html)
-- ["Multiagent Systems: A Modern Approach to Distributed Artificial Intelligence" de Gerhard Weiss"](https://www.researchgate.net/publication/277217082_Weiss_Gerhard_Multiagent_Systems_a_Modern_Approach_to_Distributed_Artificial_Intelligence)
-- ["The Nature of Code" de Daniel Shiffman"](https://natureofcode.com/)
-- [Python3 Documentation](https://docs.python.org/3/)
-- [pip Documentation](https://pip.pypa.io/en/stable/)
-- [venv Documentation](https://docs.python.org/3/library/venv.html)
+- [Mesa - Documentação Oficial](https://mesa-readthedocs-io.translate.goog/stable/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc). Acesso em 24 de janeiro de 2025.
+- [Exemplo Mesa Predação Lobo-Ovelha](https://mesa.readthedocs.io/stable/examples/advanced/wolf_sheep.html). Acesso em 15 de janeiro de 2025.
+- [Solara - Documentação Oficial](https://solara.dev/). Acesso em 26 de janeiro de 2025.
+- [Introdução ao Paradigma de Agentes](https://www.devmedia.com.br/introducao-ao-paradigma-orientado-a-agentes/28791). Acesso em 25 de janeiro de 2025.
+- [Mesa Examples](https://mesa.readthedocs.io/latest/examples.html). Acesso em 25 de janeiro de 2025.
+- ["Multiagent Systems: A Modern Approach to Distributed Artificial Intelligence" de Gerhard Weiss"](https://www.researchgate.net/publication/277217082_Weiss_Gerhard_Multiagent_Systems_a_Modern_Approach_to_Distributed_Artificial_Intelligence). Acesso em 26 de janeiro de 2025.
+- ["The Nature of Code" de Daniel Shiffman"](https://natureofcode.com/). Acesso em 23 de janeiro de 2025.
+- [Python3 Documentation](https://docs.python.org/3/). Acesso em 25 de janeiro de 2025.
+- [pip Documentation](https://pip.pypa.io/en/stable/). Acesso em 25 de janeiro de 2025.
+- [venv Documentation](https://docs.python.org/3/library/venv.html). Acesso em 25 de janeiro de 2025.
