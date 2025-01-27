@@ -262,7 +262,7 @@ Figura 3 - Informações no terminal
 
 ## Vídeo
 
-O vídeo de apresentação do projeto esta disponível no seguinte [link](https://www.youtube.com/watch?v=YcGyWoq1I4w) ou no próprio projeto [aqui]()
+O vídeo de apresentação do projeto esta disponível no seguinte [link](https://www.youtube.com/watch?v=YcGyWoq1I4w) ou no próprio projeto [aqui](./imagens/Gravação%20de%20SMA-20250127_182341-Gravação%20de%20Reunião.mp4)
 
 ## Participações
 
