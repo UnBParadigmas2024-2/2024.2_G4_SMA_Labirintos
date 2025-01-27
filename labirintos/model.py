@@ -5,6 +5,7 @@ from labirintos.agents.runner import RunnerAgent
 from labirintos.agents.enemy import EnemyAgent
 from labirintos.agents.static_agents import WallAgent, ExitAgent, StartAgent
 from labirintos.agents.key import KeyAgent
+from labirintos.agents.key_collector import KeyCollectorAgent
 from labirintos.agents.food import FoodAgent
 
 RUNNERS_COUNT = 10
@@ -31,7 +32,7 @@ class MazeModel(mesa.Model):
             self.grid.place_agent(food_agent, pos)
             print(f"Comida colocada em {pos}")
 
-         # Coloca as paredes no mapa
+        # Coloca as paredes no mapa
         for pos in maze.walls:
             self.grid.place_agent(WallAgent(self), pos)
 
@@ -46,7 +47,26 @@ class MazeModel(mesa.Model):
         # Coloca os agentes de início e saída no mapa
         self.grid.place_agent(StartAgent(self), maze.start_pos)
         self.grid.place_agent(ExitAgent(self), maze.exit_pos)
-        self.grid.place_agent(KeyAgent(self), maze.key_pos)
+
+        # Coloca a chave no mapa
+        self.key = KeyAgent(self)
+        self.grid.place_agent(self.key, maze.key_pos)
+
+        # Coloca os coletores
+        for _ in range(1,3):
+            self.key_collector = KeyCollectorAgent(self)
+            self.grid.place_agent(self.key_collector, maze.start_pos)
+
+    def reposition_key(self, key_agent):
+        """Reposiciona a chave em uma posição aleatória."""
+        # Gera uma posição aleatória válida
+        while True:
+            new_position = (self.random.randrange(self.grid.width), self.random.randrange(self.grid.height))
+            # Verifica se a célula está vazia
+            if self.grid.is_cell_empty(new_position):
+                self.grid.move_agent(key_agent, new_position)
+                print(f"Chave reposicionada para {new_position}")
+                break
 
     def step(self) -> None:
         global level
@@ -54,6 +74,7 @@ class MazeModel(mesa.Model):
         self.move_happened = False
         self.agents_by_type[EnemyAgent].do("walk")
         self.agents_by_type[RunnerAgent].do("walk")
+        self.agents_by_type[KeyCollectorAgent].do("walk")
 
         total_runners = len(self.agents_by_type[RunnerAgent])
         
@@ -84,4 +105,3 @@ class MazeModel(mesa.Model):
     def get_pheromone_at(self, position):
         # Retorna a intensidade de feromônio em uma posição
         return self.pheromones.get(position, 0)
-

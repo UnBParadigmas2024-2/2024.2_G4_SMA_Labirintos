@@ -31,6 +31,7 @@ Maze Model (Modelo do Labirinto): Controla o ambiente, onde os agentes são colo
   - EnemyAgent: Inimigos que percorrem trajetos fixos no labirinto, indo e voltando.
   - RunnerAgent: Corredores que tentam alcançar a saída do labirinto. Eles podem coletar chaves e liberar feromônios para guiar outros corredores.
   - KeyAgent: Representa a chave que os corredores precisam para acessar a saída.
+  - KeyCollectorAgent: Representa agentes que percorrem trajetos aleatórios em células vazias em busca da chave. Ao encontrá-la, a chave é reposicionada em um lugar aleatório do mapa.
   - ExitAgent: A saída do labirinto.
   - WallAgent: Representa as paredes que bloqueiam o caminho.
 
@@ -200,7 +201,7 @@ TEMPO: +/- 15min
 |       Nome do Membro        | Contribuição                                                                 | Significância da Contribuição para o Projeto | Comprobatórios |
 | :-------------------------: | ---------------------------------------------------------------------------- | :----------------------------------------------------------------------------: | :-------------------------------------: |
 | [Abdul hannan](https://github.com/hannanhunny01)	| - Fiz sistema de busca de comida no labirinto<br>- Adicionado método de busca de comida em todo o grid<br>- Otimizado algoritmo de pathfinding para encontrar comida<br>- implementacao do sistema de priorização de busca por comida quando saúde está baixa<br>- Corrigido bug na detecção de comida no parse_map | Boa | [link para commits](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commits/main/?author=hannanhunny01) |
-| [Arthur de Melo Viana](https://github.com/arthurmlv)	|  |  |  |
+| [Arthur de Melo Viana](https://github.com/arthurmlv)	| Adição do agente de coleta de chave. | Regular | [98de276d4796c414c356728b766162a938ca794d](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commit/98de276d4796c414c356728b766162a938ca794d) |
 | [Deivid Carvalho](https://github.com/deivid-a1) |  |  |  |	
 | [Felipe de Jesus Rodrigues](https://github.com/felipeJRdev) |  |  |  |
 | [Levi de Oliveira Queiroz](https://github.com/LeviQ27) |  |  |  |	
@@ -219,6 +220,8 @@ Nesse tópicos estão disponibilizadas algumas percepções dos membros do grupo
 - Trabalhar com agentes em vez de uma abordagem centralizada fez com que o desenvolvimento se tornasse mais modular e flexível, mas também nos exigiu lidar com interações complexas entre os elementos do jogo.
 
 - Acredito que conseguimos trazer uma boa adaptação do modelo SMA para o contexto de labirintos, mas precisamos evoluir mais na parte da movimentação e na introdução de novos tipos de comportamento para os agentes.
+
+- Dificuldade de balanceamento das características dos agentes. Por exemplo, o coletor poderia ser autônomo e soltar a chave somente ao chegar num lugar distante da saída, mas ele resolve somente jogar para um lugar aleatório ou quando quisesse. Contudo, dificultaria demais para os runners. O mesmo vale para os inimigos.
 
 ### Contribuições
 
