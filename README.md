@@ -1,4 +1,4 @@
-# NomeDoProjeto
+# Labirintos
 
 **Disciplina**: FGA0210 - PARADIGMAS DE PROGRAMAÇÃO - T01 <br>
 **Nro do Grupo**: 04<br>
@@ -53,7 +53,7 @@ O repositório está aberto para sugestões e contribuições. Fique à vontade 
 
 O vídeo mostra o projeto do **Labirintos** em execução
 
-<img src="./imagens/" alt="Gif do projeto em funcionamento" style="max-width:100%; height:auto;">
+<img src="./imagens/LabirintoExecucao.gif" alt="Gif do projeto em funcionamento" style="max-width:100%; height:auto;">
 
 ## Instalação 
 **Linguagens**: [Python3](https://docs.python.org/3/)<br>
@@ -180,11 +180,89 @@ Sinta-se à vontade para contribuir com melhorias ou relatar problemas no reposi
 
 ## Uso
 
-```
-  pip install -r requirements.txt
+Este projeto é uma simulação interativa de labirintos, onde agentes colaboram para alcançar a saída, enfrentando desafios e utilizando estratégias adaptativas. A simulação é implementada com as bibliotecas Mesa (para modelagem multiagentes) e Solara (para construção de interfaces gráficas dinâmicas). A seguir, explicamos como utilizar o projeto, desde sua configuração inicial até a interação com a interface gráfica.
 
+### Como Rodar o Projeto
+
+- **Instale as dependências necessárias**
+  - Certifique-se de ter o Python instalado. Em seguida, inicie um ambiente virtual e depois execute o seguinte comando no terminal para instalar as bibliotecas utilizadas no projeto:
+```bash
+  source venv/bin/activate
+
+  pip install -r requirements.txt
+```
+
+- **Inicie o projeto**
+  - No diretório do projeto, execute o comando:
+
+```bash
   solara run app.py
 ```
+
+- **Acesse a interface gráfica**
+  - Após iniciar o servidor, abra um navegador e acesse o endereço fornecido no terminal, geralmente:
+
+```bash
+  http://localhost:8765/
+```
+
+### Interagindo com a Simulação
+
+Ao abrir a interface gráfica, você verá o layout do labirinto e os controles da simulação.
+
+- **Tela Inicial**
+  - O labirinto será gerado automaticamente com base nos mapas definidos no código.
+  - Os agentes estarão posicionados em seus locais iniciais.
+
+<center>
+
+  ![Tela Inicial](./imagens/telaInicial.png)
+  Figura 1 - Tela inicial da aplicação 
+
+</center>
+
+- **Controles da Simulação**
+  - Na interface, você encontrará os seguintes controles:
+    - Play Interval (ms): Controla a velocidade da simulação em milissegundos.
+    - Render Interval (steps): Define a frequência com que o labirinto é renderizado durante os passos da simulação.
+    - Botões:
+      - Play/Continue: Inicia ou retoma a simulação.
+      - Step: Avança a simulação um passo de cada vez.
+      - Reset: Reinicia a simulação e reposicionando os agentes.
+
+<center>
+
+![Controles](./imagens/controles.png)
+
+Figura 2 - Controles do programa
+
+</center>
+
+- **Comportamento dos Agentes**
+
+  - Durante a simulação, os agentes interagem no ambiente de forma dinâmica:
+
+    - RunnerAgent (Corredor): Tenta alcançar a saída, coletando chaves e deixando feromônios para ajudar outros corredores.
+    - EnemyAgent (Inimigo): Segue trajetos fixos no labirinto, criando obstáculos para os corredores.
+    - KeyAgent (Chave): Fica localizada em pontos estratégicos do mapa. Deve ser coletada pelos corredores para liberar a saída.
+    - KeyCollectorAgent: Percorre células vazias para reposicionar a chave após ela ser coletada.
+    - WallAgent (Parede): Bloqueia o caminho dos agentes, definindo os corredores do labirinto.
+
+- **Processo de Simulação**
+
+  - Início: Após clicar em "Play", os agentes começarão a se mover pelo labirinto, seguindo suas respectivas regras.
+  - Coleta de Chave: Quando um coletor encontra a chave, ela é reposicionada aleatoriamente no mapa, mantendo o desafio dinâmico.
+  - Feromônios:  Os corredores que alcançam a saída em posse da chave liberam feromônios, ajudando os demais a encontrar o caminho ideal, mas apenas os corredores que já possuem a chave iram ser afetados pelo feromônio. Esses feromônios diminuem ao longo do tempo, simulando dissipação natural.
+  - Finalização: A simulação pode ser reiniciada ou pausada a qualquer momento, permitindo que o usuário experimente diferentes configurações e observe o comportamento dos agentes.
+  - Acompanhamento: Durante toda a simulação, no terminal estarão sendo printadas informações detalhadas sobre o que esta acontecendo no labirinto
+
+<center>
+
+![Terminal](./imagens/terminal.png)
+
+Figura 3 - Informações no terminal
+
+</center>
 
 ## Vídeo
 Adicione 1 ou mais vídeos com a execução do projeto.
@@ -206,7 +284,7 @@ TEMPO: +/- 15min
 | [Felipe de Jesus Rodrigues](https://github.com/felipeJRdev) | Desenvolvimento da funcionalidade inicial para liberação de feromônios. Agentes runners que alcançam a saída do labirinto começam a liberar "feromônios" que atraem outros agentes dentro do alcance, direcionando-os para a saída. A implementação, posteriormente, foi ajustada para alinhar com as demais funcionalidades desenvolvidas pelo grupo. | Boa | [commits](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commit/14b087245866ae33a3541a53a54e682d3ace10e2) |
 | [Levi de Oliveira Queiroz](https://github.com/LeviQ27) |  |  |  |	
 | [Matheus Fonseca Sousa](https://github.com/gatotabaco) |  |  |  |	
-| [Matheus Costa Gomes](https://github.com/mc-gomes) | Adicionou condição de parada, caso alguns runners fiquem sem vida | regular | [commit](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commit/fe52af685a51768e1ff8f79549e9de29c81f25fd) |	
+| [Matheus Costa Gomes](https://github.com/mc-gomes) | Adicionou condição de parada, caso alguns runners fiquem sem vida | Regular | [commit](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commit/fe52af685a51768e1ff8f79549e9de29c81f25fd) |	
 | [Rafael Brito Bosi Rodrigues](https://github.com/StrangeUnit28) | Ajuste na feature da chave, ajuste para que o feromônio só afetasse runners que possuissem a chave, ajuste para que apenas runners que achessem a saída e possuissem a chave soltassem feromônio, adição de novos mapas, tentativa de implementação de níveis, documentação do projeto e ajuste no visual do labirinto| Boa | [commits](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commits?author=StrangeUnit28) |	
 | [Yudi Yamane de Azevedo](https://github.com/yudi-azvd)	| Setup do projeto, Parser de mapas (arquivos txt), comportamento do agente inimigo, agente corredor toma dano quando na mesma casa que um inimigo  | Boa  | [commits](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commits/main/?author=yudi-azvd)  | 
 
