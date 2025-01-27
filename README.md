@@ -202,7 +202,7 @@ TEMPO: +/- 15min
 | [Abdul hannan](https://github.com/hannanhunny01)	| - Fiz sistema de busca de comida no labirinto<br>- Adicionado método de busca de comida em todo o grid<br>- Otimizado algoritmo de pathfinding para encontrar comida<br>- implementacao do sistema de priorização de busca por comida quando saúde está baixa<br>- Corrigido bug na detecção de comida no parse_map | Boa | [link para commits](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commits/main/?author=hannanhunny01) |
 | [Arthur de Melo Viana](https://github.com/arthurmlv)	|  |  |  |
 | [Deivid Carvalho](https://github.com/deivid-a1) |  |  |  |	
-| [Felipe de Jesus Rodrigues](https://github.com/felipeJRdev) |  |  |  |
+| [Felipe de Jesus Rodrigues](https://github.com/felipeJRdev) | Desenvolvimento da funcionalidade inicial para liberação de feromônios. Agentes runners que alcançam a saída do labirinto começam a liberar "feromônios" que atraem outros agentes dentro do alcance, direcionando-os para a saída. A implementação, posteriormente, foi ajustada para alinhar com as demais funcionalidades desenvolvidas pelo grupo. | Boa | [commits](https://github.com/UnBParadigmas2024-2/2024.2_G4_SMA_Labirintos/commit/14b087245866ae33a3541a53a54e682d3ace10e2) |
 | [Levi de Oliveira Queiroz](https://github.com/LeviQ27) |  |  |  |	
 | [Matheus Fonseca Sousa](https://github.com/gatotabaco) |  |  |  |	
 | [Matheus Costa Gomes](https://github.com/mc-gomes) |  |  |  |	
