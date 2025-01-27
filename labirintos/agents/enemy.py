@@ -43,9 +43,6 @@ class EnemyAgent(mesa.Agent):
         return self.maze.data[x][y] != Maze.WALL and self.maze.data[x][y] != Maze.EXIT
 
     def bfs(self, start, goal):
-        """
-        Busca o caminho mais curto do ponto 'start' até o ponto 'goal' usando o algoritmo BFS.
-        """
         queue = [(start, [start])]
         visited = set()
 
@@ -73,7 +70,6 @@ class EnemyAgent(mesa.Agent):
             path = self.bfs(self.pos, target_pos)
             if path and len(path) > 1:
                 new_pos = path[1]  # Próxima posição no caminho
-                print(f"Enemy {self.unique_id} movendo-se em direção ao feromônio em {target_pos}. Nova posição: {new_pos}")
                 self.model.grid.move_agent(self, new_pos)
         else:
             # Movimento aleatório caso não haja feromônio
@@ -81,5 +77,4 @@ class EnemyAgent(mesa.Agent):
             valid_moves = [n for n in neighbors if self.is_valid_move(n)]
             if valid_moves:
                 new_pos = self.random.choice(valid_moves)
-                print(f"Enemy {self.unique_id} movendo-se aleatoriamente para {new_pos}")
                 self.model.grid.move_agent(self, new_pos)
